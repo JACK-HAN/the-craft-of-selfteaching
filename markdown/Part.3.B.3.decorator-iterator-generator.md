@@ -1,7 +1,7 @@
 
 # 函数工具
 
-这一章要讲的是迭代器、生成器，和装饰器，这些都是函数工具。有人把它们称为 **DIG**（Decorator, Iterator，Generator）—— 它们都是真正掌握 Python 的关键。
+这一章要讲的是迭代器、生成器和装饰器，这些都是函数工具。有人把它们称为 **DIG**（Decorator，Iterator，Generator）—— 它们都是真正掌握 Python 的关键。
 
 ## 迭代器（Iterator）
 
@@ -170,7 +170,7 @@ for i in counter(101, 105):
 
 这里的关键在于 `yield` 这个语句。它和 `return` 最明显的不同在于，在它之后的语句依然会被执行 —— 而 `return` 之后的语句就被忽略了。
 
-但，正因为这个不同，在写生成器的时候，只能用 `yield`，而没办法使用 `return` —— 你现在可以回去把上面代码中的 `yield` 改成 `return` 看看，然后体会一下它们之间的不同。
+但正因为这个不同，在写生成器的时候，只能用 `yield`，而没办法使用 `return` —— 你现在可以回去把上面代码中的 `yield` 改成 `return` 看看，然后体会一下它们之间的不同。
 
 生成器函数被 `next()` 调用后，执行到 `yield` 生成一个值返回（然后继续执行剩余的语句）；下次再被 `next()` 调用的时候，从上次生成返回值的 `yield` 语句处继续执行…… 如果感觉费解，就多读几遍 —— 而后再想想若是生成器中有多个 `yield` 语句会是什么情况？
 
@@ -194,7 +194,7 @@ for e in even:
 
 **注意**
 
-仔细看 `even = (e for e in range(10) if not e % 2)`中最外面那层括号，用了圆括号，`even` 就是用生成器创造的迭代器（Iterator），若是用了方括号，那就是用生成器创造的列表（List）—— 当然用花括号 `{}` 生成的就是集合（Set）……
+仔细看 `even = (e for e in range(10) if not e % 2)` 中最外面那层括号，用了圆括号，`even` 就是用生成器创造的迭代器（Iterator），若是用了方括号，那就是用生成器创造的列表（List）—— 当然用花括号 `{}` 生成的就是集合（Set）……
 ```python
 # even = (e for e in range(10) if not e % 2)
 odd = [o for o in range(10) if o % 2]
@@ -486,7 +486,7 @@ def trace(func):
         print(f"Trace: You've called a function: {func.__name__}(),",
               f"with args: {args}; kwargs: {kwargs}")
     
-        orginal_result = func(*args, *kwargs)
+        orginal_result = func(*args, **kwargs)
         print(f"Trace: {func.__name__}{args} returned: {orginal_result}")
         return orginal_result
     return wrapper

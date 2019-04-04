@@ -9,7 +9,7 @@
 
 所以，在我看来，有了一点基础知识之后，最早应该学习的是 “如何写函数” —— 这个起点会更好一些。
 
-这一章的内容，看起来会感觉与[Part1 F4 函数那一章](Part.1.F.4.functions.md)部分重合。但，这两章的出发点不一样：
+这一章的内容，看起来会感觉与[Part1 F4 函数那一章](Part.1.F.4.functions.md)部分重合。但这两章的出发点不一样：
 
 > * [Part1.E.4 函数那一章](Part.1.E.4.functions.md)，只是为了让读者有 “阅读” 函数说明文档的能力；
 > * 这一章，是为了让读者能够开始动手写函数给自己或别人用……
@@ -27,20 +27,21 @@ do_nothing()
 ```
 为函数取名（为变量取名也一样）有些基本的注意事项：
 
-> - 首先，名称不能以数字开头。能用在名称开头的有，大小写字母和下划线`_`；
+> - 首先，名称不能以数字开头。能用在名称开头的有，大小写字母和下划线 `_`；
 > 
 > - 其次，名称中不能有空格，要么使用下划线连接词汇，如，`do_nothing`，要么使用 [Camel Case](https://en.wikipedia.org/wiki/Camel_case)，如 `doNothing` —— 更推荐使用下划线；
 > 
 > - 再次，名称不能与关键字重合 —— 以下是 Python 的 Keyword List：
 
-| -  | Python     | Keyword    | List       |      -       |
-| ------------ | ---------- | ---------- | ------------ | --------- |
-| `and`      | `as`     | `assert` | `async`    | `await` |
-| `continue` | `def`    | `del`    | `elif`     | `else`  |
-| `finally`  | `for`    | `from`   | `global`   | `if`    |
-| `is`       | `lambda` | `None`   | `nonlocal` | `not`   |
-| `raise`    | `return` | `True`   | `try`      | `while` |
-| `and`      | `as`     | `assert` | `async`    | `await` |
+|     -      | Python     | Keyword    | List       |     -      |
+| ---------- | ---------- | ---------- | ---------- | ---------- |
+| `and`      | `as`       | `assert`   | `async`    | `await`    |
+| `break`    | `class`    | `continue` | `def`      | `del`      |
+| `elif`     | `else`     | `except`   | `False`    | `finally`  |
+| `for`      | `from`     | `global`   | `if`       | `import`   |
+| `in`       | `is`       | `lambda`   | `None`     | `nonlocal` |
+| `not`      | `or`       | `pass`     | `raise`    | `return`   |
+| `True`     | `try`      | `while`    | `with`     | `yield`    |
 
 你随时可以用以下代码查询关键字列表：
 ```python
@@ -99,7 +100,7 @@ keyword.iskeyword('if')      # 查询某个词是不是关键字
 
 ## 不接收任何参数的函数
 
-在定义函数的时候，可以定义成不接收任何参数；但，调用函数的时候，依然需要写上函数名后面的圆括号 `()`：
+在定义函数的时候，可以定义成不接收任何参数；但调用函数的时候，依然需要写上函数名后面的圆括号 `()`：
 ```python
 def do_something():
     print('This is a hello message from do_something().')
@@ -111,7 +112,7 @@ do_something()
 
 ## 没有 return 语句的函数
 
-函数内部，不一定非要有 `return` 语句 —— 上面 `do_somthing()` 函数就没有 `return` 语句。但，如果函数内部并未定义返回值，那么，该函数的返回值是 `None`，当 `None` 被当作布尔值对待的时候，相当于是 `False`。
+函数内部，不一定非要有 `return` 语句 —— 上面 `do_somthing()` 函数就没有 `return` 语句。但如果函数内部并未定义返回值，那么，该函数的返回值是 `None`，当 `None` 被当作布尔值对待的时候，相当于是 `False`。
 
 这样的设定，使得函数调用总是可以在条件语句中被当作判断依据：
 ```python

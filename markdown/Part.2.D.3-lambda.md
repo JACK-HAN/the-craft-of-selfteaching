@@ -5,7 +5,7 @@
 
 在 Python 中，我们可以给一个函数取个**化名**（alias）。
 
-以下的代码，我们先是定义个了一个名为 `_is_leap` 的函数，而后为它另取了一个化名：
+以下的代码，我们先是定义了一个名为 `_is_leap` 的函数，而后为它另取了一个化名：
 ```python
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -69,7 +69,7 @@ lambda 的语法结构如下：
 
 > `lambda_expr ::= "lambda" [parameter_list] ":" expression`
 
-以上使用的是 BNF 标注。当然，BNF 是你目前并不熟悉的，所以，有疑惑别当回事儿。
+以上使用的是 BNF 标注。当然，BNF 是你目前并不熟悉的，所以，有疑惑别当回事。
 
 反正你已经见到示例了： 
 ```python
